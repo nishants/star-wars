@@ -1,0 +1,19 @@
+#missions-widget.vehicle{
+  .menu{
+    .select-planet{
+      opacity : 0;
+      pointer-events: none;
+    }
+  }
+}
+
+#missions-widget:not(.vehicle){
+  .menu{
+    .selected-planet{
+      @include transform(scale(0));
+    }
+    .select-vehicle{
+      opacity: 0;
+    }
+  }
+}

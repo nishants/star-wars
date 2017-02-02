@@ -1,0 +1,21 @@
+{
+  "name": "star-wars",
+  "description": "A gaming app with HTML5 and CSS3",
+  "main": "",
+  "authors": [
+    "nishant <nishant.singh87@gmail.com>"
+  ],
+  "license": "WTFPL",
+  "homepage": "https://github.com/nishants/star-wars",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "spec"
+  ],
+  "dependencies": {
+    "angular": "angularjs#1.5.11",
+    "angular-mocks": "~1.5.0"
+  }
+}

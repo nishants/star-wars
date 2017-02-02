@@ -1,0 +1,14 @@
+#help{
+  z-index: 2;
+  .content{
+    padding: $padding*2;
+    border: 1px solid;
+    .message{
+      text-align: left;
+    }
+    .skip{
+      margin-top  : $padding;
+      padding     : $padding $padding*5;
+    }
+  }
+}

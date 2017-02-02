@@ -1,0 +1,39 @@
+$vehicle_height: 46px;
+ul.vehicles{
+  > li.none-left, > li.no-range {
+    position: relative;
+    pointer-events: none;
+    .detail {
+      text-decoration: line-through;
+    }
+  }
+  > li:after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding : $padding;
+    box-sizing: border-box;
+    line-height: $vehicle_height;
+    text-align: right;
+    color: $white_light;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    content: " ";
+    pointer-events: none;
+    font-size: small;
+    @include transition(all $transition_time_slow $transition_function);
+  }
+
+  >li.no-range:after,> li.none-left:after{
+    opacity: 1;
+  }
+
+  > li.none-left:after{
+    content: "none left";
+  }
+  >li.no-range:after{
+    content: "can not reach";
+  }
+}

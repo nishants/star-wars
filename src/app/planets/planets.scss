@@ -1,0 +1,19 @@
+$loader_size: 20px;
+
+ul.planets{
+  >li.loader{
+    font-size: $loader_size;
+    border: 1px solid transparent !important;
+  }
+  > li.assigned {
+    pointer-events: none;
+    > * {
+      opacity: 0.3;
+    }
+  }
+  > li {
+    .icon{
+
+    }
+  }
+}

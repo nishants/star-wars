@@ -1,0 +1,117 @@
+$buttonHeight  : 40px;
+$vehiclesHeight: 270px;
+$planetsHeight : 40px;
+$menuHeight    : 480px;
+$iconSize      : 25px;
+$planet_width  : 350px;
+
+#missions-widget{
+  position: fixed;
+  top: $widget_top_offset;
+  left: 0;
+  z-index: 1;
+
+  width: 100%;
+  overflow: visible;
+  height: $buttonHeight;
+
+  .head-text{
+    color: $theme_green_color;
+    display: block;
+    font-size: large;
+    width: calc(100% - 2 * #{$padding});
+    line-height: $buttonHeight;
+    padding: $padding;
+  }
+  .backdrop{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100vw;
+    background: $black;
+  }
+  .actions, .menu{
+    max-width: $home_max_width;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .actions{
+    height: 100%;
+    button{
+      display: block;
+      width: 100%;
+      @include transition(transform $transition_time_medium $transition_function);
+    }
+    button.cancel{
+      background: $black;
+      color: $white_light;
+    }
+  }
+  .menu{
+    position: relative;
+    width: 100%;
+    height: $menuHeight;
+    overflow: auto;
+
+    border: 1px solid $theme_green_disabled;
+    background-color: black;
+    @extend .title-text;
+    .sub-menu{
+      width: 100%;
+      @include transition(all $transition_time_medium $transition_function);
+      >label{
+        @extend .head-text;
+      }
+      > ul {
+        @extend .undo-list;
+        > li {
+          position: relative;
+          padding: $padding*2;
+          color : $theme_green_text;
+          border-top: 1px solid $theme_green_disabled;
+          > div{
+            display: block;
+            width: $planet_width;
+            margin: auto;
+            @extend .resize-container;
+          }
+           img{
+            height: $iconSize;
+            width : $iconSize;
+            float: left;
+          }
+           .detail {
+            padding-left: $padding;
+            text-align: left;
+            float: left;
+            line-height: $iconSize;
+          }
+        }
+      }
+    }
+    .select-planet{
+      position: relative;
+      z-index: 1;
+    }
+    .selected-planet {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      line-height: $buttonHeight;
+      font-size: small;
+      color: $white_light;
+      background-color: $dark_black;
+      border: 1px solid transparent;
+      padding: $padding;
+    }
+    .select-vehicle{
+      position: absolute;
+      top: $buttonHeight;
+    }
+  }
+}
+
+@import "create-mission.create";
+@import "create-mission.vehicle";

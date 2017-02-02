@@ -1,0 +1,25 @@
+.backdrop(ng-click='wizard.reset()')
+.actions
+  button.create(ng-click='createMission()', ng-bind='help.message(missions)')
+  button.cancel(ng-click='wizard.reset()') Cancel
+.menu
+  .sub-menu.select-planet
+    label 1. Select Planet
+    ul.planets
+      li.loader(ng-show='!planets.list.length')
+        div.fa.fa-circle-o-notch.fa-spin
+      li(ng-repeat='planet in planets.list', ng-click='wizard.setPlanet(planet)',ng-class='{"assigned" : planet.assigned}')
+        div
+          include ../planets/planet
+  .sub-menu.select-vehicle
+    label 2. Select Vehicle
+    ul.vehicles
+      li.loader(ng-show='!vehicles.list.length')
+        div.fa.fa-circle-o-notch.fa-spin
+      li(ng-repeat='vehicle in vehicles.list', ng-click='wizard.setVehicle(vehicle)', ng-class='{"none-left": !vehicle.remaining,"no-range" : !wizard.isSelectable(vehicle)}')
+        div
+          include ../vehicles/vehicle
+
+  .selected-planet(ng-click='wizard.showVehicle(false)')
+    label {{wizard.planet.name}} ({{wizard.planet.distance}} megamiles)
+    label.fa.fa-caret-down

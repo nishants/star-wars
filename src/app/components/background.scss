@@ -1,0 +1,39 @@
+#background{
+  position: fixed;
+  top     : 0;
+  left    : 0;
+  height  : 100vh;
+  width   : 100%;
+  background: black;
+  .star-world{
+    min-width   : 100%;
+    min-height  : 100%;
+    @include transformOrigin(50% 50%);
+    background: $background_image repeat fixed center center;
+  }
+  .space-station{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+  }
+}
+
+$sky_rotation_speed : 700s;
+@keyframes travelerSky {
+  0% {
+    @include transform(scale(1.5) rotate(0deg));
+  }
+  50% {
+    @include transform(scale(2) rotate(-360deg));
+  }
+  100% {
+    @include transform(scale(1.5) rotate(0deg));
+  }
+}
+
+.traveler-sky{
+  animation: travelerSky $sky_rotation_speed infinite;
+  animation-timing-function: linear;
+}

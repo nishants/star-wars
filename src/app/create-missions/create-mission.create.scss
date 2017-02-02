@@ -1,0 +1,32 @@
+.disabled-button{
+  pointer-events: none;
+}
+
+#missions-widget.create{
+  .actions{
+    button.create{
+      @extend .disabled-button;
+      @include transform(translateY(-$buttonHeight));
+    }
+    button.cancel{
+      @include transform(translateY(-$buttonHeight));
+    }
+  }
+}
+
+#missions-widget:not(.create){
+  .backdrop{
+    @include transform(scale(0));
+  }
+  .actions{
+    button.cancel{
+      @extend .disabled-button;
+    }
+  }
+  .menu{
+    @include transform(scale(0));
+    .select-planet{
+      @include transform(translateY(-100%));
+    }
+  }
+}

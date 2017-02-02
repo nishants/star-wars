@@ -1,0 +1,53 @@
+#game-result{
+  .content{
+    padding: $padding*2;
+    border: 1px solid $theme_green_disabled;
+    .message{
+      h1{
+        margin: 0px;
+      }
+    }
+    .restart{
+      margin-top: $padding*2;
+      button{
+        padding: $padding $padding*5;
+      }
+    }
+    .loader{
+      padding: $padding*2;
+      font-size: large;
+    }
+  }
+}
+
+#game-result.loading{
+  .content{
+    .restart{
+      display: none;
+    }
+  }
+}
+
+#game-result:not(.lost){
+  .content{
+    .message.lost{
+      display: none;
+    }
+  }
+}
+#game-result:not(.loading){
+  .content{
+    .loader{
+      display: none;
+    }
+  }
+}
+
+#game-result:not(.won){
+  .content{
+    .won.message{
+      display: none;
+    }
+  }
+}
+

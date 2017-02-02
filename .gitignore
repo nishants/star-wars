@@ -1,0 +1,10 @@
+.idea
+*-compiled.js
+*-compiled.js.map
+/.sass-cache/
+dist/**/*.js
+dist/**/*.html
+dist/**/*.css
+dist/**/*.css.map
+/bower_components/
+/node_modules/

@@ -1,0 +1,84 @@
+$padding        : 10px;
+$modal_bg_color : rgba(0, 0, 0, 0.5);
+$line_height    : 25px;
+$modal_layer    : 1;
+$window_width   : 500px;
+$wizard_width   : $window_width;
+$station_color  : #316487;
+
+$white          : rgba(255, 255, 255, 0.95);
+$black          : rgba(0, 0, 0, 0.6);
+$dark_black     : rgba(0, 0, 0, 0.9);
+$bar_height     : 60px;
+$bottom_bar_color: $station_color;
+
+
+$theme_green_color  : #3dc743;
+$theme_green_border : rgba(61, 199, 67, 0.3);
+$theme_green_text   : #00FF80;
+$white_light        : rgba(255, 255, 255, 0.3);
+$theme_green_disabled_solid : #1e6321;
+$theme_green_superlight :rgba(0, 255, 128, 0.12);
+$theme_green_disabled       : rgba(0, 255, 128, 0.3);
+
+$progress_height: 6px;
+$progress_width : $window_width;
+$progress_bg    : rgba(255, 255, 255, 0.5);
+$progress_fg    : $theme_green_color;
+
+$game_progess_levels: 4;
+$thumbnail_height   : 50px;
+$thumbnail_width    : 50px;
+
+$transition_time_normal : 150ms;
+$transition_time_medium : 250ms;
+$transition_time_slow   : 500ms;
+
+$transition_function_swing : cubic-bezier(0.64, 0.57, 0.67, 1);
+$transition_function       : ease;
+
+$wizard_min_height: 300px;
+$home_max_width: 500px;
+$widget_top_offset: 56px;
+
+#main-content{
+  position: relative;
+  overflow: hidden;
+
+  button{
+    padding   : $padding ;
+    color     : $white;
+    border    : 1px solid transparent;
+    font-size : large;
+    background-color: $theme_green_color;
+    outline   : none;
+    @include transition(all $transition_time_normal $transition_function);
+
+    @extend .title-text;
+  }
+  .caption{
+    font-size: small;
+    font-style: italic;
+    line-height: $line_height - $padding;
+    opacity: 0.5;
+  }
+  .thumbnail{
+    height: $thumbnail_height;
+    width : $thumbnail_width;
+  }
+  .title-text{
+    font-family: $alien_font;
+  }
+}
+
+@import "components/modal";
+@import "components/deck";
+@import "components/background";
+@import "result/result";
+@import "help/help";
+@import "list-missions/home";
+@import "list-missions/missions";
+@import "components/progress";
+@import "planets/planets";
+@import "vehicles/vehicles";
+@import "create-missions/create-mission";

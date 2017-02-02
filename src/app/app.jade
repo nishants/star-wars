@@ -1,0 +1,18 @@
+#app(ng-app='galaxy', ng-init='ui.showHelp = true')
+  #background
+    .star-world.traveler-sky
+    img.space-station(src='images/space-center.png')
+  #main-content
+    #help.modal-window(ng-class='{"show" : ui.showHelp}')
+      .content
+        include help/help
+    #missions-home(ng-controller='MissionsController')
+      #help-button
+        span.fa.fa-question-circle(ng-click='ui.showHelp = true')
+      #missions-widget(ng-controller='WizardController', ng-class='{"create" : wizard.showWizard,"vehicle" : wizard.selectVehicle  }')
+        include create-missions/create-mission
+      .game-progress(class="{{progress.state}}")
+      #missions-selected
+        include list-missions/missions
+    #game-result.modal-window(ng-controller="ResultController", ng-class='{"show" : result.outcome || result.loading, "won": result.outcome.status,"lost": result.outcome && !result.outcome.status, "loading": result.loading}')
+      include result/result

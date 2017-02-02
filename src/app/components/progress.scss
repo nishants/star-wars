@@ -1,0 +1,42 @@
+.game-progress{
+  width: calc(100% - #{4*$padding});
+  max-width: $home_max_width;
+
+  margin: $widget_top_offset auto $padding auto;
+  height: $progress_height;
+  position: relative;
+  border-radius: $progress_height/2;
+  overflow: hidden;
+  border: 1px solid $theme_green_border;
+  @include transition(opacity $transition_time_slow $transition_function_swing);
+}
+.game-progress:after{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: $progress_height;
+  width: 100%;
+  background: $progress_fg;
+  content: " ";
+  border-radius: $progress_height/2;
+  @include transform(scaleX(0));
+  @include transformOrigin(0 0);
+  @include transition(all $transition_time_slow $transition_function_swing);
+}
+.game-progress.two:after{
+  @include transform(scaleX(2/$game_progess_levels));
+}
+.game-progress.three:after{
+  @include transform(scaleX(3/$game_progess_levels));
+}
+.game-progress.four{
+  opacity: 0;
+  @include transitionDelay($transition_time_slow);
+}
+
+.game-progress.four:after{
+  @include transform(scaleX(4/$game_progess_levels));
+}
+.game-progress.one:after{
+  @include transform(scaleX(1/$game_progess_levels));
+}

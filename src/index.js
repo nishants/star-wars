@@ -1,0 +1,16 @@
+require("./app/app.js");
+require("./app/variables.js");
+require("./app/config.js");
+require("./app/result/result-service.js");
+require("./app/result/result-controller.js");
+require("./app/list-missions/missions-service.js");
+require("./app/list-missions/missions-controller.js");
+require("./app/help/help-service.js");
+require("./app/components/game-progress.js");
+require("./app/components/fullscreen.js");
+require("./app/planets/planet.js");
+require("./app/planets/planets-service.js");
+require("./app/vehicles/vehicle.js");
+require("./app/vehicles/vehicles-service.js");
+require("./app/create-missions/create-mission-controller.js");
+require("./app/create-missions/create-mission-service.js");

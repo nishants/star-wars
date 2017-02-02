@@ -1,0 +1,26 @@
+#missions-selected{
+  > ul.missions {
+    > li{
+      width: auto;
+      margin: $padding;
+      border: 1px solid $theme_green_disabled;
+
+      .planet,.vehicle, .overview, .cancel{
+        width: 100%;
+        text-align: center;
+        float: none;
+        display: block;
+        padding-left: $padding;
+      }
+
+      .cancel{
+        .mobile-only{
+          opacity: 0.7;
+          border-top: 1px solid $theme_green_disabled;
+          padding-right: $padding;
+        }
+      }
+
+    }
+  }
+}

@@ -1,0 +1,61 @@
+$planet_width  : 100px;
+$vehicle_width : 150px;
+$overview_width: 250px;
+$cancel_width  : 50px;
+
+
+#missions-selected{
+  > ul.missions {
+    @extend .undo-list;
+    padding-top: $padding;
+    background: $black;
+
+    > li{
+      display   : block;
+      margin    : auto;
+      line-height: 40px;
+      color     : $theme_green_text;
+      text-transform: capitalize;
+      text-align: left;
+      width     : $padding*2 + $planet_width + $vehicle_width + $overview_width + $cancel_width;
+      padding: 0px $padding;
+      @extend .title-text;
+      @extend .appear-from-bottom;
+      @extend .resize-container;
+
+      .planet,.vehicle, .overview, .cancel,{
+        float: left;
+      }
+      .planet{
+        width: $planet_width;
+      }
+      .vehicle{
+        width: $vehicle_width;
+      }
+      .overview{
+        width: $overview_width;
+      }
+      .cancel{
+        width: $cancel_width;
+      }
+    }
+  }
+}
+.appear-from-bottom{
+  animation: fromBottom $transition_time_normal;
+  animation-timing-function: $transition_function;
+}
+
+@keyframes fromBottom {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 0;
+    @include transform(translateY(100%));
+  }
+  100% {
+    opacity: 1;
+    @include transform(translateY(0));
+  }
+}

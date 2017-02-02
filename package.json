@@ -1,0 +1,40 @@
+{
+  "name": "star-wars",
+  "private": true,
+  "version": "0.0.0",
+  "description": "A gaming app with HTML5 and CSS3",
+  "repository": "https://github.com/nishants/star-wars",
+  "license": "WTFPL",
+  "devDependencies": {
+    "bower": "^1.7.7",
+    "browserify": "^14.0.0",
+    "eslint": "^3.14.1",
+    "http-server": "^0.9.0",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-jasmine": "^0.3.8",
+    "karma-junit-reporter": "^0.4.1",
+    "uglify-js": "^2.7.5",
+    "watch": "^1.0.1",
+    "watch-run": "^1.2.5",
+    "watchify": "^3.9.0"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+    "lint": "eslint src; exit 0",
+    "scss": "scss src/index.scss:dist/index.css",
+    "scss-dev": "watch 'scss --watch src/index.scss:dist/index.css' src",
+    "jade": "jade --pretty src/index.jade -o dist",
+    "jade-dev": "jade --watch --pretty src/index.jade -o dist",
+    "js-dev": "watchify src/index.js -o dist/index.js",
+    "js": "browserify src/index.js | uglifyjs > dist/index.js",
+
+    "package": " npm run test-once && npm run js && npm run lint && npm run scss && npm run jade",
+    "test": "karma start karma.conf.js",
+    "test-once": "karma start karma.conf.js --single-run",
+    "start": "http-server -a localhost -p 8000 -c-1 ./dist",
+    "watch": "watch-run -p 'src/**' npm run package"
+  }
+}
