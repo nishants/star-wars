@@ -2,7 +2,7 @@
 > with AngularJS and SCSS.
 
 ### User Interface
-![alt text](https://raw.githubusercontent.com/nishants/star-wars/master/docs/demo/ui-hd-min.gif)
+![UI](https://raw.githubusercontent.com/nishants/star-wars/master/doc/demo/ui-hd-min.gif)
 
 
 ### Running App
