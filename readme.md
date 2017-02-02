@@ -1,7 +1,6 @@
 # Gaming Experience and Alien Theme Design 
 > with AngularJS and SCSS.
 
-### User Interface
 ![UI](https://raw.githubusercontent.com/nishants/star-wars/master/doc/demo/ui-hd-min.gif)
 
 
