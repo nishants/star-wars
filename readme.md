@@ -1,43 +1,47 @@
-## Running App
-- Open dist/index.html in browser
+# Gaming Experience and Alien Theme Design 
+### with AngularJS and SCSS.
 
-## Mobile UI
+## User Interface
 ![alt text](https://raw.githubusercontent.com/nishants/star-wars/master/docs/demo/mobile.gif)
 
-## Dev Dependencies
-  - jade
-  - scss
-  - jasmine
-  - ruby(2.3.0)
 
+## Running App
+- Open dist/index.html in browser
+- Or, run through an http server with npm 
+```bash
+npm install
+npm run start
+```
 
-## External Libraries
-  - AngularJS(1.5.7)
-  - Fontawesome(4.7.0)
+## External Depependecies
+- AngularJS(1.5.7)
+- Fontawesome(4.7.0)
 
+## Devlopment Depependecies 
+- scss
+- jade
+- npm
 
-## Package App
+## Setup
+```bash
+npm install
+```
+
+## Run Tests and Compile Source Code
 ```bash
 npm run package
 ```
-Compiled files are place in dist/
-
-## Run App
-```bash
-npm run start
-```
-or, open file dist/index.html in browser.
+Compiled files are place in *dist/* dir.
 
 ## Run Tests Once
 ```bash
 npm run test-once
 ```
 
-## Watch Js files and Run Tests
+## Watch files and run tests
 ```bash
 npm run test
 ```
-
 
 ## Watch for changes and Recompile
 ```bash
